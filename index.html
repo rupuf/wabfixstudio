@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WebFix Studio – Web Development Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050d1c;--bg2:#08152b;--card:#0a1a33;--line:#16305a;--blue:#1d8bff;--blue2:#4db3ff;--text:#f2f6ff;--mute:#9fb1cf;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){color-scheme:dark}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:2px solid var(--blue2);outline-offset:3px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(5,13,28,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px}
+.logo i{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--blue2));display:grid;place-items:center;font-style:normal;font-size:15px}
+.links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--mute)}
+.links a{position:relative;transition:color .2s}
+.links a:after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--blue);transition:width .25s}
+.links a:hover{color:#fff}.links a:hover:after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:14px;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn.p{background:var(--blue);color:#fff;box-shadow:0 8px 24px -8px var(--blue)}
+.btn.p:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px var(--blue)}
+.btn.g{border-color:#2a4676;background:rgba(255,255,255,.03)}
+.btn.g:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn svg{width:16px;transition:transform .2s}.btn:hover svg{transform:translateX(4px)}
+/* hero */
+.hero{position:relative;padding:70px 0 60px;overflow:hidden;background:radial-gradient(60% 80% at 80% 30%,rgba(29,139,255,.25),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.tag{display:inline-block;padding:5px 14px;border:1px solid var(--blue);border-radius:99px;font-size:12px;color:var(--blue2);background:rgba(29,139,255,.08)}
+h1{font-size:clamp(36px,5.4vw,60px);line-height:1.08;margin:18px 0;font-weight:800;letter-spacing:-.02em}
+h1 span,h2 span{color:var(--blue);background:linear-gradient(90deg,var(--blue),var(--blue2),var(--blue));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.hero p{color:#cfdcf3;max-width:500px;margin:0 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:34px}
+.feats{display:flex;flex-wrap:wrap;gap:22px;font-size:13px;color:var(--mute)}
+.feats b{color:var(--blue2);margin-right:6px}
+.load{opacity:0;transform:translateY(24px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.7s}
+@keyframes up{to{opacity:1;transform:none}}
+/* monitor */
+.screen{position:relative;border-radius:18px;background:#071328;border:1px solid var(--line);padding:14px;box-shadow:0 30px 80px -20px rgba(29,139,255,.5);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.dots{display:flex;gap:6px;margin-bottom:12px}.dots i{width:9px;height:9px;border-radius:50%;background:#2b4776}
+.code{font:12px/1.9 ui-monospace,Menlo,Consolas,monospace;color:#7fb4ff;background:#050d1c;border-radius:10px;padding:14px;min-height:150px;overflow:hidden}
+.code div{white-space:nowrap;overflow:hidden;width:0;animation:type 1.6s steps(30) forwards}
+.code div:nth-child(1){animation-delay:1s}.code div:nth-child(2){animation-delay:2.4s;color:#a5f0c7}.code div:nth-child(3){animation-delay:3.8s;color:#ffd58a}.code div:nth-child(4){animation-delay:5.2s}.code div:nth-child(5){animation-delay:6.6s;color:#a5f0c7}
+@keyframes type{to{width:100%}}
+.mock{margin-top:12px;border-radius:10px;background:linear-gradient(135deg,#0d2a55,#123a75);padding:16px;display:flex;align-items:center;justify-content:space-between}
+.mock b{font-size:18px}.mock small{display:block;color:var(--mute)}
+.mock span{background:var(--blue);padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600}
+.note{position:absolute;top:-34px;left:-30px;font-family:cursive;font-style:italic;color:#cfe0ff;font-size:15px;transform:rotate(-8deg)}
+/* sections */
+section{padding:80px 0}
+.head{text-align:center;margin-bottom:44px}
+h2{font-size:clamp(28px,4vw,40px);margin:12px 0 8px;font-weight:800;letter-spacing:-.01em}
+.head p{color:var(--mute);margin:0}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:linear-gradient(180deg,var(--card),#071429);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover,.card.hl{transform:translateY(-8px);border-color:var(--blue);box-shadow:0 20px 50px -20px var(--blue)}
+.ico{width:46px;height:46px;border-radius:12px;background:rgba(29,139,255,.14);display:grid;place-items:center;font-size:22px;margin-bottom:16px;transition:transform .3s}
+.card:hover .ico{transform:rotate(-8deg) scale(1.1)}
+.card h3{margin:0 0 6px;font-size:18px}.card>p{color:var(--mute);font-size:13.5px;margin:0 0 14px}
+.card ul{list-style:none;margin:0;padding:0;font-size:13.5px}
+.card li{display:flex;gap:10px;align-items:center;padding:4px 0}
+.card li:before{content:"✓";width:18px;height:18px;flex:none;border-radius:50%;background:var(--blue);font-size:11px;display:grid;place-items:center}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:26px;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:22px}
+.stat{text-align:center;border-right:1px solid var(--line)}.stat:last-child{border:0}
+.stat b{font-size:32px;color:#fff;display:block;line-height:1.2}.stat small{color:var(--mute)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;position:relative}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:34px 18px 20px;text-align:center;position:relative;transition:transform .3s,border-color .3s}
+.step:hover{transform:translateY(-6px);border-color:var(--blue)}
+.step em{position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:36px;height:36px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-style:normal;font-weight:700;box-shadow:0 0 0 6px rgba(29,139,255,.2);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(29,139,255,0)}}
+.step h3{font-size:15px;margin:0 0 4px}.step p{margin:0;font-size:12.5px;color:var(--mute)}
+.step:not(:last-child):after{content:"→";position:absolute;right:-22px;top:50%;color:var(--blue);animation:nudge 1.6s infinite}
+@keyframes nudge{50%{transform:translateX(5px)}}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.proj .thumb{height:190px;border-radius:14px;border:1px solid var(--line);overflow:hidden;position:relative;transition:transform .4s,box-shadow .4s}
+.proj:hover .thumb{transform:scale(1.03);box-shadow:0 20px 40px -18px var(--blue)}
+.t1{background:radial-gradient(circle at 70% 50%,#333 0,#0a0a0a 60%);display:flex;align-items:center;padding:24px;font-weight:700;font-size:20px}
+.t2{background:linear-gradient(180deg,#eaf1fb,#b7cdea);color:#12233f;display:flex;align-items:center;padding:24px;font-weight:800;font-size:20px}
+.t3{background:linear-gradient(135deg,#eaf0ff,#cfdcff);color:#1a2b57;display:flex;align-items:center;padding:24px;font-weight:800;font-size:20px}
+.proj h4{margin:12px 0 0;font-size:15px}.proj small{color:var(--mute)}
+.top{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px;gap:16px;flex-wrap:wrap}.top h2{margin:10px 0 4px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;background:var(--bg2)}
+.pic{height:320px;border-radius:18px;background:radial-gradient(circle at 30% 40%,rgba(29,139,255,.5),transparent 60%),#071328;border:1px solid var(--line);display:grid;place-items:center;font-size:80px}
+.pills{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px;font-size:13px;color:var(--mute)}.pills b{color:var(--blue2)}
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev .card p{font-size:15px;color:#e3ecff;margin:0 0 10px}.stars{color:#ffc542;letter-spacing:3px;margin-bottom:16px}
+.who{display:flex;align-items:center;gap:12px;font-size:14px}.who i{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#0a3a80);display:grid;place-items:center;font-style:normal;font-weight:700}
+.who small{display:block;color:var(--mute)}
+.final{text-align:center;border:1px solid var(--line);border-radius:20px;padding:50px 20px;background:radial-gradient(circle at 50% 0,rgba(29,139,255,.25),transparent 70%),var(--card)}
+.final .cta{justify-content:center;margin:22px 0 0}
+footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 0}
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv:nth-child(2){transition-delay:.1s}.rv:nth-child(3){transition-delay:.2s}.rv:nth-child(4){transition-delay:.3s}
+@media(max-width:900px){
+ .links{display:none}.hero .wrap,.about{grid-template-columns:1fr}
+ .grid4,.steps{grid-template-columns:1fr 1fr}.work,.rev{grid-template-columns:1fr}
+ .stats{grid-template-columns:1fr 1fr;gap:18px}.stat:nth-child(2){border:0}.step:after{display:none!important}.note{left:0}
+}
+@media(max-width:520px){.grid4,.steps{grid-template-columns:1fr}nav .btn{padding:9px 14px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.load,.rv{opacity:1;transform:none}.code div{width:100%}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+ <a class="logo" href="#"><i>W</i>WebFix Studio</a>
+ <div class="links"><a href="#">Home</a><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+ <a class="btn p" href="#contact">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+ <div>
+  <span class="tag load d1">Web Development Agency</span>
+  <h1 class="load d2">We Build Websites <span>That Grow Your Business</span></h1>
+  <p class="load d3">WebFix Studio helps businesses, creators and brands turn ideas into powerful websites. From modern business websites to high-converting eCommerce stores — we build, design and deliver with performance in mind.</p>
+  <div class="cta load d4">
+   <a class="btn p" href="#contact">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <a class="btn g" href="https://wa.me/918859493168?text=Hi%20WebFix%20Studio%2C%20I%20want%20a%20website" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+  </div>
+  <div class="feats load d5"><span><b>▣</b>Modern Design</span><span><b>◷</b>Fast Delivery</span><span><b>▯</b>Mobile Responsive</span><span><b>↻</b>Ongoing Support</span></div>
+ </div>
+ <div class="load d3" style="position:relative">
+  <div class="note">Turning Ideas into Websites</div>
+  <div class="screen">
+   <div class="dots"><i></i><i></i><i></i></div>
+   <div class="code"><div>&lt;section class="hero"&gt;</div><div>&nbsp;&nbsp;&lt;h1&gt;Ideas Into Reality&lt;/h1&gt;</div><div>&nbsp;&nbsp;const site = build(idea);</div><div>&nbsp;&nbsp;site.optimize("speed");</div><div>&nbsp;&nbsp;deploy(site); // live ✓</div></div>
+   <div class="mock"><div><b>Ideas Into Reality</b><small>Your website, live.</small></div><span>Launch</span></div>
+  </div>
+ </div>
+</div></header>
+
+<section id="services"><div class="wrap">
+ <div class="head rv"><span class="tag">What We Do</span><h2>Our <span>Services</span></h2><p>Complete web solutions to help your business grow online.</p></div>
+ <div class="grid4">
+  <div class="card rv"><div class="ico">🖥️</div><h3>Business Websites</h3><p>Modern, professional and high-performance websites for your brand or business.</p><ul><li>Clean &amp; Modern Design</li><li>Mobile Responsive</li><li>SEO Optimized</li><li>Fast Loading</li></ul></div>
+  <div class="card hl rv"><div class="ico">🛒</div><h3>E-commerce Websites</h3><p>Sell your products online with a powerful eCommerce store.</p><ul><li>Product Management</li><li>Secure Payment Gateway</li><li>COD / Online Payment</li><li>Order Tracking</li></ul></div>
+  <div class="card rv"><div class="ico">&lt;/&gt;</div><h3>Custom Web Applications</h3><p>Custom web apps, dashboards and tools as per your requirements.</p><ul><li>Admin Panel</li><li>User Login System</li><li>API Integration</li><li>Custom Features</li></ul></div>
+  <div class="card rv"><div class="ico">✏️</div><h3>Website Redesign</h3><p>Give your old website a modern and professional look.</p><ul><li>Modern UI/UX</li><li>Better Performance</li><li>Mobile Friendly</li><li>More Conversions</li></ul></div>
+ </div>
+ <div class="stats rv">
+  <div class="stat"><b><span data-n="50">0</span>+</b><small>Websites Delivered</small></div>
+  <div class="stat"><b><span data-n="30">0</span>+</b><small>Happy Clients</small></div>
+  <div class="stat"><b><span data-n="2">0</span>+</b><small>Years Experience</small></div>
+  <div class="stat"><b><span data-n="100">0</span>%</b><small>Client Satisfaction</small></div>
+ </div>
+</div></section>
+
+<section id="process" style="padding-top:20px"><div class="wrap">
+ <div class="head rv"><span class="tag">How We Work</span><h2>A Simple &amp; Clear Process</h2><p>From idea to launch — we keep everything smooth and transparent.</p></div>
+ <div class="steps">
+  <div class="step rv"><em>1</em><h3>Discuss Your Idea</h3><p>Tell us your requirements and goals.</p></div>
+  <div class="step rv"><em>2</em><h3>Plan &amp; Design</h3><p>We create a strategy and design the layout.</p></div>
+  <div class="step rv"><em>3</em><h3>Development</h3><p>We build your website with modern technologies.</p></div>
+  <div class="step rv"><em>4</em><h3>Launch &amp; Support</h3><p>Your website goes live with ongoing support.</p></div>
+ </div>
+</div></section>
+
+<section id="work" style="padding-top:20px"><div class="wrap">
+ <div class="top rv"><div><span class="tag">Our Work</span><h2>Recent Projects</h2><small style="color:var(--mute)">Some of the websites we've created for our clients.</small></div><a class="btn g" href="#">View All Projects</a></div>
+ <div class="work">
+  <div class="proj rv"><div class="thumb t1">Premium Sound<br>For a Better You</div><h4>E-commerce Website</h4><small>Electronics Store</small></div>
+  <div class="proj rv"><div class="thumb t2">Build Your Dream<br>Home With Us</div><h4>Business Website</h4><small>Construction Company</small></div>
+  <div class="proj rv"><div class="thumb t3">Manage Your Business<br>Smarter &amp; Faster</div><h4>Web Application</h4><small>Business Management Tool</small></div>
+ </div>
+</div></section>
+
+<section id="about" style="background:var(--bg2)"><div class="wrap about" style="background:none">
+ <div class="pic rv">👨‍💻</div>
+ <div class="rv"><span class="tag">About WebFix Studio</span><h2>Your Trusted Web <span>Development Partner</span></h2><p style="color:#cfdcf3">At WebFix Studio, we focus on creating modern, clean and high-performing websites that help your business grow. We believe in quality work, clear communication and long-term support.</p>
+ <div class="pills"><span><b>&lt;/&gt;</b> Clean Code</span><span><b>▣</b> Modern Design</span><span><b>◷</b> On-Time Delivery</span><span><b>✦</b> Client Focused</span></div></div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="head rv"><span class="tag">Client Reviews</span><h2>What Our Clients Say</h2></div>
+ <div class="rev">
+  <div class="card rv"><p>“Amazing work! The website looks professional and loads super fast. Highly recommended!”</p><div class="stars">★★★★★</div><div class="who"><i>R</i><div>Rohit Sharma<small>Business Owner</small></div></div></div>
+  <div class="card rv"><p>“Very professional and supportive. Delivered exactly what I needed.”</p><div class="stars">★★★★★</div><div class="who"><i>P</i><div>Priya Das<small>Clothing Brand</small></div></div></div>
+  <div class="card rv"><p>“Great communication and excellent design. Will work again for future projects!”</p><div class="stars">★★★★★</div><div class="who"><i>A</i><div>Amit Verma<small>Startup Founder</small></div></div></div>
+ </div>
+</div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="final rv">
+ <span class="tag">Let's Build Your Website</span><h2>Ready to Get Started?</h2><p style="color:var(--mute);margin:0">Tell us about your project and get a free quote today.</p>
+ <div class="cta"><a class="btn p" href="#">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="https://wa.me/918859493168?text=Hi%20WebFix%20Studio%2C%20I%20want%20a%20website" target="_blank" rel="noopener">💬 Chat on WhatsApp</a></div>
+</div></div></section>
+<footer>© 2026 WebFix Studio. All rights reserved.</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-n]').forEach(c=>{const t=+c.dataset.n;let s=null;const f=ts=>{s=s||ts;const p=Math.min((ts-s)/1400,1);c.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)});io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
